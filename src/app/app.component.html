@@ -1,0 +1,17 @@
+<!-- <ul *ngFor="let game of games">
+  <li>{{ game.gameId }}, {{ game.gameMode}}, {{ game.participants[0].teamId }}</li>
+</ul> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 sidebar" style="height: 100%">
+      <app-sidebar class="order-2"></app-sidebar>
+    </div>
+
+    <div class="col-md-9 content">
+      <app-navbar class="order-1"></app-navbar>
+      <router-outlet class="order-3"></router-outlet>
+    </div>
+  </div>
+  
+</div>

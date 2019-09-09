@@ -1,0 +1,12 @@
+nav {
+   box-shadow: 0 2px 2px -2px gray;
+   padding-left: 0;
+}
+
+i {
+   font-size: 2em;
+}
+
+input {
+   border-radius: 25px;
+}

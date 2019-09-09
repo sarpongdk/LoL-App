@@ -1,0 +1,35 @@
+.avatar {
+   border-radius: 50%;
+   width: 65%;
+   margin: 0 auto;
+}
+
+.champion-list {
+   padding: 5px;
+   margin-right: 0;
+   padding-right: 0;
+   width: 100%;
+}
+
+.champion-list:hover {
+   background: lightgray;
+   cursor: pointer;
+}
+
+.list {
+   margin-top: 20px;
+   padding-left: 1em;
+}
+
+.champion-name {
+   font-size: 2.5rem;
+}
+
+.badge {
+   display: inline;
+   margin-right: 2px;
+}
+
+ul {
+   list-style-type: none;
+}

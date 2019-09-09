@@ -1,0 +1,64 @@
+.container {
+   padding-top: 20px;
+}
+
+.avatar {
+   border-radius: 50%;
+}
+
+.champion-summary p {
+   padding: 5px;
+   margin: auto 0;
+}
+
+nav ul {
+   list-style-type: none;
+}
+
+li {
+   display: flex;
+   float: left;
+   padding: 10px;
+   justify-content: space-between;
+}
+
+.navbar {
+   width: 100%;
+   display: inline-block;
+   padding-bottom: 0;
+   margin-bottom: 0;
+   border-bottom: 1px solid gray;
+}
+
+.navbar a {
+   float: left;
+   text-decoration: none;
+   color: black;
+   text-align: left;
+   padding: 14px;
+   padding-bottom: 15px;
+   margin-bottom: 0;
+}
+
+.active {
+   border-bottom: 1px solid red;
+}
+
+.champion-ability {
+   margin-right: 2px;
+   width: 30px;
+}
+
+.key-binding {
+   text-align: center;
+   font-size: 0.5em;
+   color: white;
+   background-color: black;
+   width: 15px;
+   height: 15px;
+   padding: 0;
+   margin: 0;
+   position: relative;
+   top: 20px;
+   left: -10px;
+}

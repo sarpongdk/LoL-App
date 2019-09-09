@@ -1,0 +1,24 @@
+<div *ngFor="let ability of champion.getAbilities()" class="row mb-1">
+   <div class="col-xs-2 col-md-1">
+      <img [src]="imageService.getAbilitiesUrl() + ability.getImageUrl()" alt="Champion ability">
+      <div class="key-binding">
+         {{ ability.getKeyBinding() }}
+      </div>
+   </div>
+   <div class="col-xs-5 col-md-5">
+      <div class="row">
+         <div class="col-12">
+            {{ ability.getName() }}
+         </div>
+
+         <div class="col-12">
+            Cooldown: [ {{ ability.getCooldownProgression() }} ]
+         </div>
+
+         <div class="col-12">
+            Cost: [ {{ ability.getCost() }} ]
+         </div>
+      </div>
+
+   </div>
+</div>

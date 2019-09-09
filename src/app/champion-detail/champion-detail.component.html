@@ -1,0 +1,130 @@
+<div class="container">
+   <div class="row" id="champion-intro">
+      <div class="col-2">
+         <img class="img-fluid avatar" alt="Champion Avatar" [src]="champion.getImages().getFullImageFilename()">
+      </div>
+
+      <div class="col-8 champion-summary">
+         <div class="row mb-0 pb-0">
+            <h2><strong>{{ champion.getName() }}</strong></h2>
+         </div>
+
+
+         <div class="row mt-0 pt-0">
+            <p><em>{{ champion.getTitle() }}</em></p>
+         </div>
+
+         <div class="row">
+            <img class="img-fluid champion-ability"
+               [src]="imageService.getPassiveUrl() + champion.getPassive().getImageUrl()" alt="Champion Passive">
+            <div class="key-binding">
+               P
+            </div>
+
+            <a [routerLink]="['./spells']">
+               <img class="img-fluid champion-ability"
+               [src]="imageService.getAbilitiesUrl() + champion.getAbilities()[0].getImageUrl()" alt="Champion Ability">
+            </a>
+            <div class="key-binding">
+               Q
+            </div>
+
+            <a [routerLink]="['./spells']">
+               <img class="img-fluid champion-ability"
+               [src]="imageService.getAbilitiesUrl() + champion.getAbilities()[1].getImageUrl()" alt="Champion Ability">
+            </a>
+            <div class="key-binding">
+               W
+            </div>
+
+            <a [routerLink]="['./spells']">
+               <img class="img-fluid champion-ability"
+               [src]="imageService.getAbilitiesUrl() + champion.getAbilities()[2].getImageUrl()" alt="Champion Ability">
+            </a>
+            <div class="key-binding">
+               E
+            </div>
+
+            <a [routerLink]="['./spells']">
+               <img class="img-fluid champion-ability"
+               [src]="imageService.getAbilitiesUrl() + champion.getAbilities()[3].getImageUrl()" alt="Champion Ability">
+            </a>
+            <div class="key-binding">
+               R
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="row mt-3" id="navigation-menu">
+      <div class="col-12">
+         <div class="navbar">
+            <a [routerLink]="['./skins']" routerLinkActive="active">Skins</a>
+            <a [routerLink]="['./lore']" routerLinkActive="active">Lore</a>
+            <a [routerLink]="['./recommended']" routerLinkActive="active">Recommended</a>
+            <a [routerLink]="['./spells']" routerLinkActive="active">Spells</a>
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-12">
+         <router-outlet></router-outlet>
+      </div>
+   </div>
+
+   <div class="row mt-5">
+      <div class="col-sm-12 col-md-7">
+         <div class="row">
+            <div class="col-12">
+               <div class="card">
+                  <div class="card-header">
+                     Background Blurb
+                  </div>
+                  <div class="card-body">
+                     <p class="card-text">{{ champion.getLore().getBlurb() }}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="row mt-3">
+            <div class="col-12">
+               <div class="card">
+                  <div class="card-header">
+                     Stats
+                  </div>
+                  <div class="card-body">
+                     <p class="card-text">Attack: {{ champion.getInfo().getAttack() }}</p>
+                     <p class="card-text">Defense: {{ champion.getInfo().getDefense() }}</p>
+                     <p class="card-text">Magic: {{ champion.getInfo().getMagic() }}</p>
+                     <p class="card-text">Difficulty: {{ champion.getInfo().getDifficulty() }}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+
+      <div class="col-sm-12 col-md-5">
+         <div class="card">
+            <div class="card-header">
+               Tips
+            </div>
+            <div class="card-body">
+               <h5 class="card-title">Ally Tips</h5>
+               <li *ngFor="let tip of champion.getTips().getAllyTips()" class="card-text">{{ tip }}</li>
+
+
+
+               <h5 class="card-title mt-2">Enemy Tips</h5>
+               <li *ngFor="let tip of champion.getTips().getEnemyTips()" class="card-text">{{ tip }}</li>
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+</div>

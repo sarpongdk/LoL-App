@@ -1,0 +1,10 @@
+.main {
+   width: 100%;
+   height: 100%;
+   margin: auto;
+}
+
+.spinner-border {
+   width: 7em;
+   height: 7em;
+}
