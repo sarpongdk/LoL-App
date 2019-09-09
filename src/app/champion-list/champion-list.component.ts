@@ -15,9 +15,11 @@ import { Router } from '@angular/router';
 
 export class ChampionListComponent implements OnInit {
   champions: Champion[];
+  loading: boolean;
 
   constructor(private championService: ChampionService, private imageService: ImageService, private router: Router) { 
     this.champions = [];
+    this.loading = true;
   }
 
   ngOnInit() {
@@ -47,6 +49,8 @@ export class ChampionListComponent implements OnInit {
 
       this.champions.push(champion);
     });
+
+    this.loading = false;
   }
 
   showDetails(champion: Champion): void

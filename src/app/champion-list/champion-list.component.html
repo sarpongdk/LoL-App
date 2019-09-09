@@ -1,4 +1,4 @@
-<div class="list">
+<div *ngIf="!loading" class="list">
    <div  *ngFor="let champion of champions" class="row champion-list" (click)="showDetails(champion)">
       <div class="col-md-2 icon">
          <img class="img-fluid rounded-circle" [src]="champion.getImages().getFullImageFilename()">
