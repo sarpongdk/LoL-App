@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="!loading" class="container">
    <div class="row" id="champion-intro">
       <div class="col-2">
          <img class="img-fluid avatar" alt="Champion Avatar" [src]="champion.getImages().getFullImageFilename()">

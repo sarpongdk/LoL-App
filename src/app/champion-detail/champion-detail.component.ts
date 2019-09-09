@@ -18,7 +18,7 @@ export class ChampionDetailComponent implements OnInit {
   loading: boolean;
 
   constructor(private championService: ChampionService, private imageService: ImageService) { 
-
+    this.loading = true;
   }
 
   ngOnInit() {
