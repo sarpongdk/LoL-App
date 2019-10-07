@@ -1,9 +1,8 @@
 # Introduction To Leaue of Legends
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
+The main purpose is to provide a gentle introduction to new players, via a more beginner friendly interface, without having to be in-game to find certain information. It makes searching for specific information easier.
 
-The main purpose is to provide a gentle introduction to new players, via a more beginner friendly interface, without having to be in-game to find certain information. It makes searching for specific information easier
-
+To visit the webpage, navigate to `https://beginner-introduction-to-lol.herokuapp.com/champions`
 
 ## To test the app via the Development server
 Clone the git repositorty via the following command `git clone https://github.com/sarpongdk/LoL-App.git` and run the following command:
