@@ -6,7 +6,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  private versioningUrl: string = "https://ddragon.leagueoflegends.com/realms/na.json";
+  private loading: boolean;
+  private versioningUrl: string = "http://ddragon.leagueoflegends.com/api/versions.json";
 
   private endpoints: object = {
     euw: "euw1.api.riotgames.com",
@@ -18,6 +19,7 @@ export class ApiService {
   private version: string = "9.17.1";
 
   constructor(private http: HttpClient) {
+    this.loading = true;
     this.getMostRecentVersion()
       .subscribe((version) => {
         this.version = version;
@@ -28,7 +30,8 @@ export class ApiService {
     return this.http.get(this.versioningUrl)
       .pipe(map(response => {
         // @ts-ignore
-        let data = response.v;
+        let data = response[0];
+        console.log(data.toString());
         return data;
       }));
   }
@@ -37,7 +40,19 @@ export class ApiService {
     return this.apiKey;
   }
 
-  getVersion(): string {
+  getVersion() {
+    // this.loading = true;
+    // let version = this.version;
+
+    // this.http.get(this.versioningUrl)
+    //     .subscribe((response) => {
+    //       version = response[0];
+    //       this.loading = false;
+    //     }, () => {}, () => this.loading = false);
+
+    // console.log(version);
+    // return version;
+
     return this.version;
   }
 }

@@ -12,13 +12,15 @@ export class ImageService {
   championLoadingUrl: string;
   abilitiesUrl: string;
   passiveUrl: string;
+  runeUrl: string;
 
   constructor(private http: HttpClient, private apiService: ApiService) 
   {
     this.championSquareUrl = `http://ddragon.leagueoflegends.com/cdn/${ this.apiService.getVersion() }/img/champion/`;
     this.passiveUrl = `http://ddragon.leagueoflegends.com/cdn/${ this.apiService.getVersion() }/img/passive/`
     this.abilitiesUrl = `http://ddragon.leagueoflegends.com/cdn/${ this.apiService.getVersion() }/img/spell/`;
-    this.championSkinSplashUrl = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/`; //Aatrox_0.jpg;
+    this.championSkinSplashUrl = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/`;
+    this.runeUrl = `https://ddragon.leagueoflegends.com/cdn/img/`; //https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png
   }
 
   getChampionSquareUrl(): string
@@ -39,5 +41,10 @@ export class ImageService {
   getChampionSkinUrl(): string
   {
     return this.championSkinSplashUrl;
+  }
+
+  getRuneUrl(): string
+  {
+    return this.runeUrl;
   }
 }

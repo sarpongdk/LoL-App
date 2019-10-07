@@ -1,4 +1,7 @@
+import { Champion } from './../model/champion/champion';
+import { ChampionService } from './../services/champion/champion.service';
 import { Component, OnInit } from '@angular/core';
+import { ImageService } from '../services/images/image.service';
 
 @Component({
   selector: 'app-recommended',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommended.component.css']
 })
 export class RecommendedComponent implements OnInit {
+  champion: Champion;
 
-  constructor() { }
+  constructor(private championService: ChampionService, private imageService: ImageService) { }
 
   ngOnInit() {
+    this.champion = this.championService.getClickedChampion();
+
+    console.log(this.champion);
   }
 
 }

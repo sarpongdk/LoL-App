@@ -1,0 +1,19 @@
+<div class="container">
+   <div *ngFor="let runeTree of runePath" class="row">
+      <div class="col-12">
+         <img class="img-fluid" [src]="imageService.getRuneUrl() + runeTree.getIconPath()" alt="Rune Tree Icon">
+         {{ runeTree.getName() }}
+         
+         <div class="row">
+            <div class="col-12">
+               <div *ngFor="let slot of runeTree.getSlots()" class="row">
+                  <div *ngFor="let rune of slot.getRunes()" class="col-3">
+                     <img class="img-fluid" [src]="imageService.getRuneUrl() + rune.getIconPath()" alt="Rune Icon">
+                     {{ rune.getName() }}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

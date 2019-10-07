@@ -1,3 +1,4 @@
+import { RunesComponent } from './runes/runes.component';
 import { ChampionGuard } from './services/guards/champion.guard';
 import { LoreComponent } from './lore/lore.component';
 import { SpellComponent } from './spell/spell.component';
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: "summoner",
     component: SummonerComponent
+  },
+  {
+    path: "runes",
+    component: RunesComponent
   },
   {
     path: "", 

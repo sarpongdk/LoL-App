@@ -22,6 +22,8 @@ import { SkinsComponent } from './skins/skins.component';
 import { SpellComponent } from './spell/spell.component';
 import { LoreComponent } from './lore/lore.component';
 import { RecommendedComponent } from './recommended/recommended.component';
+import { RunesComponent } from './runes/runes.component';
+import { RuneService } from './services/rune.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { RecommendedComponent } from './recommended/recommended.component';
     SkinsComponent,
     SpellComponent,
     LoreComponent,
-    RecommendedComponent
+    RecommendedComponent,
+    RunesComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { RecommendedComponent } from './recommended/recommended.component';
     GameService,
     ImageService,
     ChampionService,
-    SummonerService
+    SummonerService,
+    RuneService
   ],
   bootstrap: [AppComponent]
 })

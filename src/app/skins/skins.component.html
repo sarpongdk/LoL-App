@@ -1,8 +1,6 @@
-<!-- <div class="row">
+<div class="row">
    <div *ngFor="let skin of champion.getSkins()" class="col-4">
-      <img class="img-fluid" [src]="imageService.getChampionSkinUrl() + champion.getStringId() + '_' + skin.getNumber() + '.jpg'" alt="Champion skin">
-      {{ skin.getName() }}
+      <img class="img-fluid" [src]="imageService.getChampionSkinUrl() + champion.getStringId() + '_' + skin.num + '.jpg' " alt="Champion skin">
+      <p>{{ skin.name == 'default' ? champion.getStringId() : skin.name }}</p>
    </div>
-</div> -->
-
-<p>Coming Soon!</p>
+</div>
