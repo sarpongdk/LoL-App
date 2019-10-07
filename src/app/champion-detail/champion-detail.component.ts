@@ -19,6 +19,7 @@ export class ChampionDetailComponent implements OnInit {
 
   constructor(private championService: ChampionService, private imageService: ImageService) { 
     this.loading = true;
+    this.champion = new Champion(null, null, null, null, null, null, null);
   }
 
   ngOnInit() {

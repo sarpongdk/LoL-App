@@ -10,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class LoreComponent implements OnInit {
   champion: Champion;
 
-  constructor(private championService: ChampionService) { }
+  constructor(private championService: ChampionService) {
+    this.champion = new Champion(null, null, null, null, null, null, null);
+  }
 
   ngOnInit() 
   {

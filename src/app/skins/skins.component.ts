@@ -11,7 +11,9 @@ import { ImageService } from '../services/images/image.service';
 export class SkinsComponent implements OnInit {
   champion: Champion;
 
-  constructor(private championService: ChampionService, private imageService: ImageService) { }
+  constructor(private championService: ChampionService, private imageService: ImageService) {
+    this.champion = new Champion(null, null, null, null, null, null, null);
+  }
 
   ngOnInit() {
     this.champion = this.championService.getClickedChampion();
