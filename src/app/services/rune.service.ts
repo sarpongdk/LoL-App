@@ -10,7 +10,7 @@ export class RuneService {
   url: string;
 
   constructor(private apiService: ApiService, private http: HttpClient) { 
-    this.url = `http://ddragon.leagueoflegends.com/cdn/${this.apiService.getVersion()}/data/en_US/runesReforged.json`;
+    this.url = `http://ddragon.leagueoflegends.com/cdn/${ this.apiService.getVersion() }/data/en_US/runesReforged.json`;
   }
 
   getRunes(): Observable<any>

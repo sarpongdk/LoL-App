@@ -6,6 +6,7 @@ import { ChampionInfo } from '../model/champion/champion-info';
 import { ChampionImage } from '../model/champion/champion-image';
 import { Champion } from '../model/champion/champion';
 import { Router } from '@angular/router';
+import { SearchService } from '../services/search/search.service';
 
 @Component({
   selector: 'app-champion-list',
@@ -17,7 +18,7 @@ export class ChampionListComponent implements OnInit {
   champions: Champion[];
   loading: boolean;
 
-  constructor(private championService: ChampionService, private imageService: ImageService, private router: Router) { 
+  constructor(private championService: ChampionService, private imageService: ImageService, private searchService: SearchService, private router: Router) { 
     this.champions = [];
     this.loading = true;
   }
@@ -31,21 +32,22 @@ export class ChampionListComponent implements OnInit {
   }
 
   
-  private downloadChampionList(response): void {
-    var payload = Object.keys(response.data).map(key => {
+  private downloadChampionList(response): void 
+  {
+    let payload = Object.keys(response.data).map(key => {
       return response.data[key];
     })
 
     payload.forEach((data) => {
-      var stats = data.stats;
-      var info = data.info;
-      var images = data.image;
-      var championSquareBaseUrl = this.imageService.getChampionSquareUrl();
+      let stats = data.stats;
+      let info = data.info;
+      let images = data.image;
+      let championSquareBaseUrl = this.imageService.getChampionSquareUrl();
 
-      var championStats: ChampionStats = new ChampionStats(stats.armor, stats.attackdamage, stats.attackspeed, stats.hp, stats.movespeed, stats.mp);
-      var championInfo: ChampionInfo = new ChampionInfo(info.attack, info.defense, info.magic, info.difficulty, data.tags);
-      var championImages: ChampionImage = new ChampionImage(championSquareBaseUrl + images.full, images.sprite);
-      var champion: Champion = new Champion(data.key, data.name, data.title, data.id, championImages, championStats, championInfo);
+      let championStats: ChampionStats = new ChampionStats(stats.armor, stats.attackdamage, stats.attackspeed, stats.hp, stats.movespeed, stats.mp);
+      let championInfo: ChampionInfo = new ChampionInfo(info.attack, info.defense, info.magic, info.difficulty, data.tags);
+      let championImages: ChampionImage = new ChampionImage(championSquareBaseUrl + images.full, images.sprite);
+      let champion: Champion = new Champion(data.key, data.name, data.title, data.id, championImages, championStats, championInfo);
 
       this.champions.push(champion);
     });

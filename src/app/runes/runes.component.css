@@ -1,0 +1,33 @@
+.container {
+   padding: 50px;
+}
+
+hr {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   border: 0;
+   border-top: 1px solid rgba(0, 0, 0, 0.1);
+ }
+
+.rune-img {
+   width: 60px;
+}
+
+h6 {
+   position: relative;
+   top: -50px;
+   left: 55px;
+   width: 50%;
+}
+
+.rune-path-header {
+   font-size: 2em;
+   position: relative;
+   top: -50px;
+}
+
+.rune-path-img {
+   width: 50px;
+   position: relative;
+   left: 350px;
+}

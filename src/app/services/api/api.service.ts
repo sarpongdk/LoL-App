@@ -16,7 +16,7 @@ export class ApiService {
     kr: "kr.api.riotgames.com"
   };
   private apiKey: string = "RGAPI-1f65bd4c-757c-453e-8533-1ffc169bc70a";
-  private version: string = "9.17.1";
+  private version: string = "9.19.1";
 
   constructor(private http: HttpClient) {
     this.loading = true;

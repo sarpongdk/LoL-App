@@ -1,19 +1,32 @@
 <div class="container">
-   <div *ngFor="let runeTree of runePath" class="row">
+   <div *ngFor="let runeTree of runePath" class="row mb-5 pb-5">
       <div class="col-12">
-         <img class="img-fluid" [src]="imageService.getRuneUrl() + runeTree.getIconPath()" alt="Rune Tree Icon">
-         {{ runeTree.getName() }}
+         <div class="main-rune">
+            <img class="img-fluid rune-path-img" [src]="imageService.getRuneUrl() + runeTree.getIconPath()" alt="Rune Tree Icon">
+            <div class="text-center rune-path-header">
+               {{ runeTree.getName() }}
+            </div>
+         </div>
+
          
          <div class="row">
             <div class="col-12">
                <div *ngFor="let slot of runeTree.getSlots()" class="row">
-                  <div *ngFor="let rune of slot.getRunes()" class="col-3">
-                     <img class="img-fluid" [src]="imageService.getRuneUrl() + rune.getIconPath()" alt="Rune Icon">
-                     {{ rune.getName() }}
+                  <div *ngFor="let rune of slot.getRunes()" class="mb-3 p-3" [ngClass]="{ 'col-md-3': slot.getRunes().length == 4, 'col-md-4': slot.getRunes().length == 3 }">
+                     <img class="img-fluid rune-img" [src]="imageService.getRuneUrl() + rune.getIconPath()" alt="Rune Icon">
+                     <h6 class="text-center">
+                        <strong>
+                           {{ rune.getName() }}
+                        </strong>
+                     </h6>
+
+                     <div [innerHtml]="rune.getLongDescription()">
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
+      <hr/>
    </div>
 </div>
